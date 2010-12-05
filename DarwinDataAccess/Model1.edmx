@@ -1,0 +1,942 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataStoreModel.Store" Alias="Self" Provider="System.Data.SqlServerCe.3.5" ProviderManifestToken="3.5" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="DataStoreModelStoreContainer">
+          <EntitySet Name="Class" EntityType="DataStoreModel.Store.Class" store:Type="Tables" />
+          <EntitySet Name="Family" EntityType="DataStoreModel.Store.Family" store:Type="Tables" />
+          <EntitySet Name="Genus" EntityType="DataStoreModel.Store.Genus" store:Type="Tables" />
+          <EntitySet Name="Kingdom" EntityType="DataStoreModel.Store.Kingdom" store:Type="Tables" />
+          <EntitySet Name="MapRefs" EntityType="DataStoreModel.Store.MapRefs" store:Type="Tables" />
+          <EntitySet Name="Order" EntityType="DataStoreModel.Store.Order" store:Type="Tables" />
+          <EntitySet Name="Phylum" EntityType="DataStoreModel.Store.Phylum" store:Type="Tables" />
+          <EntitySet Name="SimilarSpecies" EntityType="DataStoreModel.Store.SimilarSpecies" store:Type="Tables" />
+          <EntitySet Name="Species" EntityType="DataStoreModel.Store.Species" store:Type="Tables" />
+          <EntitySet Name="SpeciesStatus" EntityType="DataStoreModel.Store.SpeciesStatus" store:Type="Tables" />
+          <AssociationSet Name="FK_Class" Association="DataStoreModel.Store.FK_Class">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classs" Association="DataStoreModel.Store.FK_Classs">
+            <End Role="Class" EntitySet="Class" />
+            <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Famillyy" Association="DataStoreModel.Store.FK_Famillyy">
+            <End Role="Family" EntitySet="Family" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Family" Association="DataStoreModel.Store.FK_Family">
+            <End Role="Family" EntitySet="Family" />
+            <End Role="Genus" EntitySet="Genus" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Genus" Association="DataStoreModel.Store.FK_Genus">
+            <End Role="Genus" EntitySet="Genus" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kingdom" Association="DataStoreModel.Store.FK_Kingdom">
+            <End Role="Kingdom" EntitySet="Kingdom" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kingdom_C" Association="DataStoreModel.Store.FK_Kingdom_C">
+            <End Role="Kingdom" EntitySet="Kingdom" />
+            <End Role="Phylum" EntitySet="Phylum" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OOrder" Association="DataStoreModel.Store.FK_OOrder">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order" Association="DataStoreModel.Store.FK_Order">
+            <End Role="Order" EntitySet="Order" />
+            <End Role="Family" EntitySet="Family" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Phylumms" Association="DataStoreModel.Store.FK_Phylumms">
+            <End Role="Phylum" EntitySet="Phylum" />
+            <End Role="Class" EntitySet="Class" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Phylums" Association="DataStoreModel.Store.FK_Phylums">
+            <End Role="Phylum" EntitySet="Phylum" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="Sp1CR" Association="DataStoreModel.Store.Sp1CR">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="SimilarSpecies" EntitySet="SimilarSpecies" />
+          </AssociationSet>
+          <AssociationSet Name="Sp2CR" Association="DataStoreModel.Store.Sp2CR">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="SimilarSpecies" EntitySet="SimilarSpecies" />
+          </AssociationSet>
+          <AssociationSet Name="specieslink" Association="DataStoreModel.Store.specieslink">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="MapRefs" EntitySet="MapRefs" />
+          </AssociationSet>
+          <AssociationSet Name="spst" Association="DataStoreModel.Store.spst">
+            <End Role="SpeciesStatus" EntitySet="SpeciesStatus" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ClassId" Type="int" Nullable="false" />
+          <Property Name="ClassName" Type="nvarchar" MaxLength="100" />
+          <Property Name="PhylumId" Type="int" />
+        </EntityType>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="FamilyId" />
+          </Key>
+          <Property Name="FamilyId" Type="int" Nullable="false" />
+          <Property Name="FamilyName" Type="nvarchar" MaxLength="100" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="3000" />
+        </EntityType>
+        <EntityType Name="Genus">
+          <Key>
+            <PropertyRef Name="GenusId" />
+          </Key>
+          <Property Name="GenusId" Type="int" Nullable="false" />
+          <Property Name="GenusName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FamilyId" Type="int" />
+        </EntityType>
+        <EntityType Name="Kingdom">
+          <Key>
+            <PropertyRef Name="KingdomId" />
+          </Key>
+          <Property Name="KingdomId" Type="int" Nullable="false" />
+          <Property Name="KingdomName" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MapRefs">
+          <Key>
+            <PropertyRef Name="MapId" />
+          </Key>
+          <Property Name="MapId" Type="int" Nullable="false" />
+          <Property Name="SpeciesId" Type="int" />
+          <Property Name="MapX" Type="int" />
+          <Property Name="MapY" Type="int" />
+          <Property Name="DateSeen" Type="datetime" />
+          <Property Name="Notes" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="int" Nullable="false" />
+          <Property Name="OrderName" Type="nvarchar" MaxLength="100" />
+          <Property Name="ClassId" Type="int" />
+          <Property Name="NumberInOrder" Type="int" />
+          <Property Name="Notes" Type="nvarchar" MaxLength="2000" />
+        </EntityType>
+        <EntityType Name="Phylum">
+          <Key>
+            <PropertyRef Name="PhylumId" />
+          </Key>
+          <Property Name="PhylumId" Type="int" Nullable="false" />
+          <Property Name="PhylumName" Type="nvarchar" MaxLength="100" />
+          <Property Name="KingdomId" Type="int" />
+        </EntityType>
+        <EntityType Name="SimilarSpecies">
+          <Key>
+            <PropertyRef Name="SimilarId" />
+          </Key>
+          <Property Name="SimilarId" Type="int" Nullable="false" />
+          <Property Name="SpeciesId1" Type="int" />
+          <Property Name="SpeciesId2" Type="int" />
+        </EntityType>
+        <EntityType Name="Species">
+          <Key>
+            <PropertyRef Name="SpeciesId" />
+          </Key>
+          <Property Name="SpeciesId" Type="int" Nullable="false" />
+          <Property Name="PhylumId" Type="int" />
+          <Property Name="ClassId" Type="int" />
+          <Property Name="OrderId" Type="int" />
+          <Property Name="SpeciesName" Type="nvarchar" MaxLength="100" />
+          <Property Name="FamilyId" Type="int" />
+          <Property Name="GenusId" Type="int" />
+          <Property Name="KingdomId" Type="int" />
+          <Property Name="SpeciesLatin" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" />
+          <Property Name="Habitat" Type="nvarchar" />
+          <Property Name="Distribution" Type="nvarchar" />
+          <Property Name="Food" Type="nvarchar" />
+          <Property Name="Breeding" Type="nvarchar" />
+          <Property Name="Seasons" Type="int" />
+          <Property Name="Status" Type="nvarchar" />
+          <Property Name="Flags" Type="int" />
+          <Property Name="Behaviour" Type="nvarchar" />
+          <Property Name="DistributionFlags" Type="int" />
+          <Property Name="Colour" Type="int" />
+          <Property Name="SpeciesStatus" Type="int" />
+        </EntityType>
+        <EntityType Name="SpeciesStatus">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="int" Nullable="false" />
+          <Property Name="StatusText" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <Association Name="FK_Class">
+          <End Role="Class" Type="DataStoreModel.Store.Class" Multiplicity="0..1" />
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classs">
+          <End Role="Class" Type="DataStoreModel.Store.Class" Multiplicity="0..1" />
+          <End Role="Order" Type="DataStoreModel.Store.Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Famillyy">
+          <End Role="Family" Type="DataStoreModel.Store.Family" Multiplicity="0..1" />
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="FamilyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Family">
+          <End Role="Family" Type="DataStoreModel.Store.Family" Multiplicity="0..1" />
+          <End Role="Genus" Type="DataStoreModel.Store.Genus" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyId" />
+            </Principal>
+            <Dependent Role="Genus">
+              <PropertyRef Name="FamilyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Genus">
+          <End Role="Genus" Type="DataStoreModel.Store.Genus" Multiplicity="0..1" />
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genus">
+              <PropertyRef Name="GenusId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="GenusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kingdom">
+          <End Role="Kingdom" Type="DataStoreModel.Store.Kingdom" Multiplicity="0..1" />
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kingdom">
+              <PropertyRef Name="KingdomId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="KingdomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kingdom_C">
+          <End Role="Kingdom" Type="DataStoreModel.Store.Kingdom" Multiplicity="0..1" />
+          <End Role="Phylum" Type="DataStoreModel.Store.Phylum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kingdom">
+              <PropertyRef Name="KingdomId" />
+            </Principal>
+            <Dependent Role="Phylum">
+              <PropertyRef Name="KingdomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OOrder">
+          <End Role="Order" Type="DataStoreModel.Store.Order" Multiplicity="0..1" />
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order">
+          <End Role="Order" Type="DataStoreModel.Store.Order" Multiplicity="0..1" />
+          <End Role="Family" Type="DataStoreModel.Store.Family" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Family">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Phylumms">
+          <End Role="Phylum" Type="DataStoreModel.Store.Phylum" Multiplicity="0..1" />
+          <End Role="Class" Type="DataStoreModel.Store.Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Phylum">
+              <PropertyRef Name="PhylumId" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="PhylumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Phylums">
+          <End Role="Phylum" Type="DataStoreModel.Store.Phylum" Multiplicity="0..1" />
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Phylum">
+              <PropertyRef Name="PhylumId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="PhylumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Sp1CR">
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="0..1" />
+          <End Role="SimilarSpecies" Type="DataStoreModel.Store.SimilarSpecies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="SpeciesId" />
+            </Principal>
+            <Dependent Role="SimilarSpecies">
+              <PropertyRef Name="SpeciesId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Sp2CR">
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="0..1" />
+          <End Role="SimilarSpecies" Type="DataStoreModel.Store.SimilarSpecies" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="SpeciesId" />
+            </Principal>
+            <Dependent Role="SimilarSpecies">
+              <PropertyRef Name="SpeciesId2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="specieslink">
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="0..1" />
+          <End Role="MapRefs" Type="DataStoreModel.Store.MapRefs" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="SpeciesId" />
+            </Principal>
+            <Dependent Role="MapRefs">
+              <PropertyRef Name="SpeciesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="spst">
+          <End Role="SpeciesStatus" Type="DataStoreModel.Store.SpeciesStatus" Multiplicity="0..1" />
+          <End Role="Species" Type="DataStoreModel.Store.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpeciesStatus">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="SpeciesStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataStoreModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="DataStoreEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Classes" EntityType="DataStoreModel.Class" />
+          <EntitySet Name="Genuss" EntityType="DataStoreModel.Genus" />
+          <EntitySet Name="Orders" EntityType="DataStoreModel.Order" />
+          <EntitySet Name="Phyla" EntityType="DataStoreModel.Phylum" />
+          <EntitySet Name="Species" EntityType="DataStoreModel.Species" />
+          <AssociationSet Name="FK_Genus" Association="DataStoreModel.FK_Genus">
+            <End Role="Genus" EntitySet="Genuss" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <EntitySet Name="Families" EntityType="DataStoreModel.Family" />
+          <EntitySet Name="Kingdoms" EntityType="DataStoreModel.Kingdom" />
+          <AssociationSet Name="FK_Kingdom" Association="DataStoreModel.FK_Kingdom">
+            <End Role="Kingdom" EntitySet="Kingdoms" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Kingdom_C" Association="DataStoreModel.FK_Kingdom_C">
+            <End Role="Kingdom" EntitySet="Kingdoms" />
+            <End Role="Phylum" EntitySet="Phyla" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Class" Association="DataStoreModel.FK_Class">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Family" Association="DataStoreModel.FK_Family">
+            <End Role="Family" EntitySet="Families" />
+            <End Role="Genu" EntitySet="Genuss" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Order" Association="DataStoreModel.FK_Order">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Family" EntitySet="Families" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Phylums" Association="DataStoreModel.FK_Phylums">
+            <End Role="Phylum" EntitySet="Phyla" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Phylumms" Association="DataStoreModel.FK_Phylumms">
+            <End Role="Phylum" EntitySet="Phyla" />
+            <End Role="Class" EntitySet="Classes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Classs" Association="DataStoreModel.FK_Classs">
+            <End Role="Class" EntitySet="Classes" />
+            <End Role="Order" EntitySet="Orders" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Famillyy" Association="DataStoreModel.FK_Famillyy">
+            <End Role="Family" EntitySet="Families" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <AssociationSet Name="FK_OOrder" Association="DataStoreModel.FK_OOrder">
+            <End Role="Order" EntitySet="Orders" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+          <EntitySet Name="MapRefs" EntityType="DataStoreModel.MapRef" />
+          <AssociationSet Name="MapToSpecies" Association="DataStoreModel.MapToSpecies">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="MapRef" EntitySet="MapRefs" />
+          </AssociationSet>
+          <EntitySet Name="SimilarSpecies" EntityType="DataStoreModel.SimilarSpecy" />
+          <AssociationSet Name="Sp1CR" Association="DataStoreModel.Sp1CR">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="SimilarSpecy" EntitySet="SimilarSpecies" />
+          </AssociationSet>
+          <AssociationSet Name="Sp2CR" Association="DataStoreModel.Sp2CR">
+            <End Role="Species" EntitySet="Species" />
+            <End Role="SimilarSpecy" EntitySet="SimilarSpecies" />
+          </AssociationSet>
+          <EntitySet Name="SpeciesStatus" EntityType="DataStoreModel.SpeciesStatu" />
+          <AssociationSet Name="spst" Association="DataStoreModel.spst">
+            <End Role="SpeciesStatu" EntitySet="SpeciesStatus" />
+            <End Role="Species" EntitySet="Species" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Class">
+          <Key>
+            <PropertyRef Name="ClassId" />
+          </Key>
+          <Property Name="ClassId" Type="Int32" Nullable="false" />
+          <Property Name="ClassName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PhylumId" Type="Int32" />
+          <NavigationProperty Name="Species" Relationship="DataStoreModel.FK_Class" FromRole="Class" ToRole="Species" />
+          <NavigationProperty Name="Phylum" Relationship="DataStoreModel.FK_Phylumms" FromRole="Class" ToRole="Phylum" />
+          <NavigationProperty Name="Orders" Relationship="DataStoreModel.FK_Classs" FromRole="Class" ToRole="Order" />
+        </EntityType>
+        <EntityType Name="Genus">
+          <Key>
+            <PropertyRef Name="GenusId" />
+          </Key>
+          <Property Name="GenusId" Type="Int32" Nullable="false" />
+          <Property Name="GenusName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FamilyId" Type="Int32" />
+          <NavigationProperty Name="Species" Relationship="DataStoreModel.FK_Genus" FromRole="Genus" ToRole="Species" />
+          <NavigationProperty Name="Family" Relationship="DataStoreModel.FK_Family" FromRole="Genu" ToRole="Family" />
+        </EntityType>
+        <EntityType Name="Order">
+          <Key>
+            <PropertyRef Name="OrderId" />
+          </Key>
+          <Property Name="OrderId" Type="Int32" Nullable="false" />
+          <Property Name="OrderName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="ClassId" Type="Int32" />
+          <NavigationProperty Name="Families" Relationship="DataStoreModel.FK_Order" FromRole="Order" ToRole="Family" />
+          <NavigationProperty Name="Class" Relationship="DataStoreModel.FK_Classs" FromRole="Order" ToRole="Class" />
+          <NavigationProperty Name="Species" Relationship="DataStoreModel.FK_OOrder" FromRole="Order" ToRole="Species" />
+          <Property Type="Int32" Name="NumberInOrder" />
+          <Property Type="String" Name="Notes" MaxLength="2000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Phylum">
+          <Key>
+            <PropertyRef Name="PhylumId" />
+          </Key>
+          <Property Name="PhylumId" Type="Int32" Nullable="false" />
+          <Property Name="PhylumName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="KingdomId" Type="Int32" />
+          <NavigationProperty Name="Kingdom" Relationship="DataStoreModel.FK_Kingdom_C" FromRole="Phylum" ToRole="Kingdom" />
+          <NavigationProperty Name="Species" Relationship="DataStoreModel.FK_Phylums" FromRole="Phylum" ToRole="Species" />
+          <NavigationProperty Name="Classes" Relationship="DataStoreModel.FK_Phylumms" FromRole="Phylum" ToRole="Class" />
+        </EntityType>
+        <EntityType Name="Species">
+          <Key>
+            <PropertyRef Name="SpeciesId" />
+          </Key>
+          <Property Name="SpeciesId" Type="Int32" Nullable="false" />
+          <Property Name="PhylumId" Type="Int32" />
+          <Property Name="ClassId" Type="Int32" />
+          <Property Name="OrderId" Type="Int32" />
+          <Property Name="SpeciesName" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FamilyId" Type="Int32" />
+          <Property Name="GenusId" Type="Int32" />
+          <Property Name="KingdomId" Type="Int32" />
+          <NavigationProperty Name="Genu" Relationship="DataStoreModel.FK_Genus" FromRole="Species" ToRole="Genus" />
+          <NavigationProperty Name="Kingdom" Relationship="DataStoreModel.FK_Kingdom" FromRole="Species" ToRole="Kingdom" />
+          <NavigationProperty Name="Class" Relationship="DataStoreModel.FK_Class" FromRole="Species" ToRole="Class" />
+          <NavigationProperty Name="Phylum" Relationship="DataStoreModel.FK_Phylums" FromRole="Species" ToRole="Phylum" />
+          <NavigationProperty Name="Family" Relationship="DataStoreModel.FK_Famillyy" FromRole="Species" ToRole="Family" />
+          <NavigationProperty Name="Order" Relationship="DataStoreModel.FK_OOrder" FromRole="Species" ToRole="Order" />
+          <Property Type="String" Name="SpeciesLatin" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Description" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Habitat" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Distribution" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Food" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Behaviour" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Breeding" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Seasons" />
+          <Property Type="String" Name="Status" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="Flags" />
+          <NavigationProperty Name="MapRefs" Relationship="DataStoreModel.MapToSpecies" FromRole="Species" ToRole="MapRef" />
+          <Property Type="Int32" Name="DistributionFlags" />
+          <Property Type="Int32" Name="Colour" />
+          <NavigationProperty Name="SimilarSpeciesId1" Relationship="DataStoreModel.Sp1CR" FromRole="Species" ToRole="SimilarSpecy" />
+          <NavigationProperty Name="SimilarSpeciesId2" Relationship="DataStoreModel.Sp2CR" FromRole="Species" ToRole="SimilarSpecy" />
+          <Property Type="Int32" Name="SpeciesStatus" />
+          <NavigationProperty Name="SpeciesStatu" Relationship="DataStoreModel.spst" FromRole="Species" ToRole="SpeciesStatu" />
+        </EntityType>
+        <Association Name="FK_Genus">
+          <End Role="Genus" Type="DataStoreModel.Genus" Multiplicity="0..1" />
+          <End Role="Species" Type="DataStoreModel.Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Genus">
+              <PropertyRef Name="GenusId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="GenusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Family">
+          <Key>
+            <PropertyRef Name="FamilyId" />
+          </Key>
+          <Property Type="Int32" Name="FamilyId" Nullable="false" />
+          <Property Type="String" Name="FamilyName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="OrderId" />
+          <NavigationProperty Name="Genus" Relationship="DataStoreModel.FK_Family" FromRole="Family" ToRole="Genu" />
+          <NavigationProperty Name="Order" Relationship="DataStoreModel.FK_Order" FromRole="Family" ToRole="Order" />
+          <NavigationProperty Name="Species" Relationship="DataStoreModel.FK_Famillyy" FromRole="Family" ToRole="Species" />
+          <Property Type="String" Name="Notes" MaxLength="3000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Kingdom">
+          <Key>
+            <PropertyRef Name="KingdomId" />
+          </Key>
+          <Property Type="Int32" Name="KingdomId" Nullable="false" />
+          <Property Type="String" Name="KingdomName" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Species" Relationship="DataStoreModel.FK_Kingdom" FromRole="Kingdom" ToRole="Species" />
+          <NavigationProperty Name="Phyla" Relationship="DataStoreModel.FK_Kingdom_C" FromRole="Kingdom" ToRole="Phylum" />
+        </EntityType>
+        <Association Name="FK_Kingdom">
+          <End Type="DataStoreModel.Kingdom" Role="Kingdom" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kingdom">
+              <PropertyRef Name="KingdomId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="KingdomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Kingdom_C">
+          <End Type="DataStoreModel.Kingdom" Role="Kingdom" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Phylum" Role="Phylum" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kingdom">
+              <PropertyRef Name="KingdomId" />
+            </Principal>
+            <Dependent Role="Phylum">
+              <PropertyRef Name="KingdomId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Class">
+          <End Type="DataStoreModel.Class" Role="Class" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Family">
+          <End Type="DataStoreModel.Family" Role="Family" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Genus" Role="Genu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyId" />
+            </Principal>
+            <Dependent Role="Genu">
+              <PropertyRef Name="FamilyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Order">
+          <End Type="DataStoreModel.Order" Role="Order" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Family" Role="Family" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Family">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Phylums">
+          <End Type="DataStoreModel.Phylum" Role="Phylum" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Phylum">
+              <PropertyRef Name="PhylumId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="PhylumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Phylumms">
+          <End Type="DataStoreModel.Phylum" Role="Phylum" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Class" Role="Class" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Phylum">
+              <PropertyRef Name="PhylumId" />
+            </Principal>
+            <Dependent Role="Class">
+              <PropertyRef Name="PhylumId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Classs">
+          <End Type="DataStoreModel.Class" Role="Class" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Class">
+              <PropertyRef Name="ClassId" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="ClassId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Famillyy">
+          <End Type="DataStoreModel.Family" Role="Family" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Family">
+              <PropertyRef Name="FamilyId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="FamilyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_OOrder">
+          <End Type="DataStoreModel.Order" Role="Order" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Order">
+              <PropertyRef Name="OrderId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="OrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="MapRef">
+          <Key>
+            <PropertyRef Name="MapId" />
+          </Key>
+          <Property Type="Int32" Name="MapId" Nullable="false" />
+          <Property Type="Int32" Name="SpeciesId" />
+          <Property Type="Int32" Name="MapX" />
+          <Property Type="Int32" Name="MapY" />
+          <Property Type="DateTime" Name="DateSeen" />
+          <Property Type="String" Name="Notes" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Species" Relationship="DataStoreModel.MapToSpecies" FromRole="MapRef" ToRole="Species" />
+        </EntityType>
+        <Association Name="MapToSpecies">
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="0..1" />
+          <End Type="DataStoreModel.MapRef" Role="MapRef" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="SpeciesId" />
+            </Principal>
+            <Dependent Role="MapRef">
+              <PropertyRef Name="SpeciesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SimilarSpecy">
+          <Key>
+            <PropertyRef Name="SimilarId" />
+          </Key>
+          <Property Type="Int32" Name="SimilarId" Nullable="false" />
+          <Property Type="Int32" Name="SpeciesId1" />
+          <Property Type="Int32" Name="SpeciesId2" />
+          <NavigationProperty Name="SpeciesToId1" Relationship="DataStoreModel.Sp1CR" FromRole="SimilarSpecy" ToRole="Species" />
+          <NavigationProperty Name="SpeciesToId2" Relationship="DataStoreModel.Sp2CR" FromRole="SimilarSpecy" ToRole="Species" />
+        </EntityType>
+        <Association Name="Sp1CR">
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="0..1" />
+          <End Type="DataStoreModel.SimilarSpecy" Role="SimilarSpecy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="SpeciesId" />
+            </Principal>
+            <Dependent Role="SimilarSpecy">
+              <PropertyRef Name="SpeciesId1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Sp2CR">
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="0..1" />
+          <End Type="DataStoreModel.SimilarSpecy" Role="SimilarSpecy" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Species">
+              <PropertyRef Name="SpeciesId" />
+            </Principal>
+            <Dependent Role="SimilarSpecy">
+              <PropertyRef Name="SpeciesId2" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SpeciesStatu">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Type="Int32" Name="StatusId" Nullable="false" />
+          <Property Type="String" Name="StatusText" MaxLength="300" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Species" Relationship="DataStoreModel.spst" FromRole="SpeciesStatu" ToRole="Species" />
+        </EntityType>
+        <Association Name="spst">
+          <End Type="DataStoreModel.SpeciesStatu" Role="SpeciesStatu" Multiplicity="0..1" />
+          <End Type="DataStoreModel.Species" Role="Species" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpeciesStatu">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="Species">
+              <PropertyRef Name="SpeciesStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataStoreModelStoreContainer" CdmEntityContainer="DataStoreEntities">
+          <EntitySetMapping Name="Classes"><EntityTypeMapping TypeName="DataStoreModel.Class"><MappingFragment StoreEntitySet="Class">
+            <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+            <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+            <ScalarProperty Name="PhylumId" ColumnName="PhylumId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Genuss"><EntityTypeMapping TypeName="DataStoreModel.Genus"><MappingFragment StoreEntitySet="Genus">
+            <ScalarProperty Name="GenusId" ColumnName="GenusId" />
+            <ScalarProperty Name="GenusName" ColumnName="GenusName" />
+            <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Orders"><EntityTypeMapping TypeName="DataStoreModel.Order"><MappingFragment StoreEntitySet="Order">
+            <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="NumberInOrder" ColumnName="NumberInOrder" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+            <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Phyla"><EntityTypeMapping TypeName="DataStoreModel.Phylum"><MappingFragment StoreEntitySet="Phylum">
+            <ScalarProperty Name="PhylumId" ColumnName="PhylumId" />
+            <ScalarProperty Name="PhylumName" ColumnName="PhylumName" />
+            <ScalarProperty Name="KingdomId" ColumnName="KingdomId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Species"><EntityTypeMapping TypeName="DataStoreModel.Species"><MappingFragment StoreEntitySet="Species">
+                <ScalarProperty Name="SpeciesStatus" ColumnName="SpeciesStatus" />
+                <ScalarProperty Name="Colour" ColumnName="Colour" />
+                <ScalarProperty Name="DistributionFlags" ColumnName="DistributionFlags" />
+                <ScalarProperty Name="Flags" ColumnName="Flags" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Seasons" ColumnName="Seasons" />
+                <ScalarProperty Name="Breeding" ColumnName="Breeding" />
+                <ScalarProperty Name="Behaviour" ColumnName="Behaviour" />
+                <ScalarProperty Name="Food" ColumnName="Food" />
+                <ScalarProperty Name="Distribution" ColumnName="Distribution" />
+                <ScalarProperty Name="Habitat" ColumnName="Habitat" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="SpeciesLatin" ColumnName="SpeciesLatin" />
+                <ScalarProperty Name="SpeciesId" ColumnName="SpeciesId" />
+            <ScalarProperty Name="PhylumId" ColumnName="PhylumId" />
+            <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+            <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+            <ScalarProperty Name="SpeciesName" ColumnName="SpeciesName" />
+            <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+            <ScalarProperty Name="GenusId" ColumnName="GenusId" />
+            <ScalarProperty Name="KingdomId" ColumnName="KingdomId" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="Families">
+            <EntityTypeMapping TypeName="DataStoreModel.Family">
+              <MappingFragment StoreEntitySet="Family">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+                <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+                <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Kingdoms">
+            <EntityTypeMapping TypeName="DataStoreModel.Kingdom">
+              <MappingFragment StoreEntitySet="Kingdom">
+                <ScalarProperty Name="KingdomName" ColumnName="KingdomName" />
+                <ScalarProperty Name="KingdomId" ColumnName="KingdomId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MapRefs">
+            <EntityTypeMapping TypeName="DataStoreModel.MapRef">
+              <MappingFragment StoreEntitySet="MapRefs">
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="DateSeen" ColumnName="DateSeen" />
+                <ScalarProperty Name="MapY" ColumnName="MapY" />
+                <ScalarProperty Name="MapX" ColumnName="MapX" />
+                <ScalarProperty Name="SpeciesId" ColumnName="SpeciesId" />
+                <ScalarProperty Name="MapId" ColumnName="MapId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SimilarSpecies">
+            <EntityTypeMapping TypeName="DataStoreModel.SimilarSpecy">
+              <MappingFragment StoreEntitySet="SimilarSpecies">
+                <ScalarProperty Name="SpeciesId2" ColumnName="SpeciesId2" />
+                <ScalarProperty Name="SpeciesId1" ColumnName="SpeciesId1" />
+                <ScalarProperty Name="SimilarId" ColumnName="SimilarId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SpeciesStatus">
+            <EntityTypeMapping TypeName="DataStoreModel.SpeciesStatu">
+              <MappingFragment StoreEntitySet="SpeciesStatus">
+                <ScalarProperty Name="StatusText" ColumnName="StatusText" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model1" ZoomLevel="64">
+        <EntityTypeShape EntityType="DataStoreModel.Class" Width="1.5" PointX="6.25" PointY="3" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataStoreModel.Genus" Width="1.5" PointX="0.5" PointY="0.5" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataStoreModel.Order" Width="1.5" PointX="4.375" PointY="2.375" Height="1.9802864583333326" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataStoreModel.Phylum" Width="1.5" PointX="8.125" PointY="3.375" Height="2.1725878906249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="DataStoreModel.Species" Width="1.5" PointX="12.25" PointY="0.875" Height="5.634013671875" IsExpanded="true" />
+        <AssociationConnector Association="DataStoreModel.FK_Genus" ManuallyRouted="false">
+          <ConnectorPoint PointX="2" PointY="1.03125" />
+          <ConnectorPoint PointX="12.25" PointY="1.03125" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DataStoreModel.Family" Width="1.5" PointX="2.375" PointY="1.25" Height="1.9802864583333335" />
+        <EntityTypeShape EntityType="DataStoreModel.Kingdom" Width="1.5" PointX="10.125" PointY="4.25" Height="1.7879850260416657" />
+        <AssociationConnector Association="DataStoreModel.FK_Kingdom" >
+          <ConnectorPoint PointX="11.625" PointY="5.1439925130208328" />
+          <ConnectorPoint PointX="12.25" PointY="5.1439925130208328" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_Kingdom_C" >
+          <ConnectorPoint PointX="10.125" PointY="4.8987939453125" />
+          <ConnectorPoint PointX="9.625" PointY="4.8987939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_Class" >
+          <ConnectorPoint PointX="7.75" PointY="3.15625" />
+          <ConnectorPoint PointX="12.25" PointY="3.15625" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_Family" >
+          <ConnectorPoint PointX="2.375" PointY="1.8651432291666663" />
+          <ConnectorPoint PointX="2" PointY="1.8651432291666663" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_Order" >
+          <ConnectorPoint PointX="4.375" PointY="2.8987939453125" />
+          <ConnectorPoint PointX="3.875" PointY="2.8987939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_Phylums" >
+          <ConnectorPoint PointX="9.625" PointY="3.78125" />
+          <ConnectorPoint PointX="12.25" PointY="3.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_Phylumms" >
+          <ConnectorPoint PointX="8.125" PointY="4.2737939453125" />
+          <ConnectorPoint PointX="7.75" PointY="4.2737939453125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_Classs" >
+          <ConnectorPoint PointX="6.25" PointY="3.9660953776041663" />
+          <ConnectorPoint PointX="5.875" PointY="3.9660953776041663" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_Famillyy" >
+          <ConnectorPoint PointX="3.875" PointY="1.78125" />
+          <ConnectorPoint PointX="12.25" PointY="1.78125" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.FK_OOrder" >
+          <ConnectorPoint PointX="5.875" PointY="2.65625" />
+          <ConnectorPoint PointX="12.25" PointY="2.65625" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DataStoreModel.MapRef" Width="1.5" PointX="14.5" PointY="2.625" Height="2.3648893229166674" />
+        <AssociationConnector Association="DataStoreModel.MapToSpecies" >
+          <ConnectorPoint PointX="13.75" PointY="3.8074446614583337" />
+          <ConnectorPoint PointX="14.5" PointY="3.8074446614583337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DataStoreModel.SimilarSpecy" Width="1.5" PointX="14.5" PointY="6.125" Height="1.9802864583333317" />
+        <AssociationConnector Association="DataStoreModel.Sp1CR" >
+          <ConnectorPoint PointX="13.75" PointY="7.3287721294620987" />
+          <ConnectorPoint PointX="14.5" PointY="7.3287721294620987" />
+        </AssociationConnector>
+        <AssociationConnector Association="DataStoreModel.Sp2CR" >
+          <ConnectorPoint PointX="13.75" PointY="6.6643860647310493" />
+          <ConnectorPoint PointX="14.5" PointY="6.6643860647310493" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="DataStoreModel.SpeciesStatu" Width="1.5" PointX="0.75" PointY="4.875" Height="1.5956835937499996" />
+        <AssociationConnector Association="DataStoreModel.spst" >
+          <ConnectorPoint PointX="2.25" PointY="6.2855843098958326" />
+          <ConnectorPoint PointX="12.25" PointY="6.2855843098958326" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

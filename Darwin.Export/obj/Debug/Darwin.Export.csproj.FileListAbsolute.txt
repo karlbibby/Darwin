@@ -1,0 +1,9 @@
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\bin\Debug\Darwin.Export.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\bin\Debug\Darwin.Export.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\bin\Debug\DarwinDataAccess.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\bin\Debug\DataAccess.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\bin\Debug\DarwinDataAccess.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\bin\Debug\DataAccess.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\obj\Debug\Darwin.Export.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.Export\obj\Debug\Darwin.Export.pdb

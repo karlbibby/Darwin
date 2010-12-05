@@ -1,0 +1,8 @@
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinResources\bin\Debug\DarwinResources.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinResources\bin\Debug\DarwinResources.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinResources\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinResources\obj\Debug\DarwinResources.Properties.Resources.resources
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinResources\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinResources\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinResources\obj\Debug\DarwinResources.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinResources\obj\Debug\DarwinResources.pdb

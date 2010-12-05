@@ -1,0 +1,5 @@
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DataAccess\bin\Debug\DataAccess.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DataAccess\bin\Debug\DataAccess.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DataAccess\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DataAccess\obj\Debug\DataAccess.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DataAccess\obj\Debug\DataAccess.pdb

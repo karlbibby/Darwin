@@ -1,0 +1,6 @@
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinDataAccess\bin\Release\DarwinDataAccess.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinDataAccess\bin\Release\DarwinDataAccess.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinDataAccess\obj\Release\ResolveAssemblyReference.cache
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinDataAccess\obj\Release\DarwinDataAccess.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinDataAccess\obj\Release\DarwinDataAccess.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\DarwinDataAccess\bin\Release\DarwinDataAccess.dll.config

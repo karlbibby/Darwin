@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataStoreModelStoreContainer" CdmEntityContainer="DataStoreEntities">
+    <EntitySetMapping Name="Classes">
+      <EntityTypeMapping TypeName="DataStoreModel.Class">
+        <MappingFragment StoreEntitySet="Class">
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="ClassName" ColumnName="ClassName" />
+          <ScalarProperty Name="PhylumId" ColumnName="PhylumId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genuss">
+      <EntityTypeMapping TypeName="DataStoreModel.Genus">
+        <MappingFragment StoreEntitySet="Genus">
+          <ScalarProperty Name="GenusId" ColumnName="GenusId" />
+          <ScalarProperty Name="GenusName" ColumnName="GenusName" />
+          <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="DataStoreModel.Order">
+        <MappingFragment StoreEntitySet="Order">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="NumberInOrder" ColumnName="NumberInOrder" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="OrderName" ColumnName="OrderName" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Phyla">
+      <EntityTypeMapping TypeName="DataStoreModel.Phylum">
+        <MappingFragment StoreEntitySet="Phylum">
+          <ScalarProperty Name="PhylumId" ColumnName="PhylumId" />
+          <ScalarProperty Name="PhylumName" ColumnName="PhylumName" />
+          <ScalarProperty Name="KingdomId" ColumnName="KingdomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Species">
+      <EntityTypeMapping TypeName="DataStoreModel.Species">
+        <MappingFragment StoreEntitySet="Species">
+          <ScalarProperty Name="SpeciesStatus" ColumnName="SpeciesStatus" />
+          <ScalarProperty Name="Colour" ColumnName="Colour" />
+          <ScalarProperty Name="DistributionFlags" ColumnName="DistributionFlags" />
+          <ScalarProperty Name="Flags" ColumnName="Flags" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Seasons" ColumnName="Seasons" />
+          <ScalarProperty Name="Breeding" ColumnName="Breeding" />
+          <ScalarProperty Name="Behaviour" ColumnName="Behaviour" />
+          <ScalarProperty Name="Food" ColumnName="Food" />
+          <ScalarProperty Name="Distribution" ColumnName="Distribution" />
+          <ScalarProperty Name="Habitat" ColumnName="Habitat" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="SpeciesLatin" ColumnName="SpeciesLatin" />
+          <ScalarProperty Name="SpeciesId" ColumnName="SpeciesId" />
+          <ScalarProperty Name="PhylumId" ColumnName="PhylumId" />
+          <ScalarProperty Name="ClassId" ColumnName="ClassId" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="SpeciesName" ColumnName="SpeciesName" />
+          <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+          <ScalarProperty Name="GenusId" ColumnName="GenusId" />
+          <ScalarProperty Name="KingdomId" ColumnName="KingdomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Families">
+      <EntityTypeMapping TypeName="DataStoreModel.Family">
+        <MappingFragment StoreEntitySet="Family">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="FamilyName" ColumnName="FamilyName" />
+          <ScalarProperty Name="FamilyId" ColumnName="FamilyId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kingdoms">
+      <EntityTypeMapping TypeName="DataStoreModel.Kingdom">
+        <MappingFragment StoreEntitySet="Kingdom">
+          <ScalarProperty Name="KingdomName" ColumnName="KingdomName" />
+          <ScalarProperty Name="KingdomId" ColumnName="KingdomId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MapRefs">
+      <EntityTypeMapping TypeName="DataStoreModel.MapRef">
+        <MappingFragment StoreEntitySet="MapRefs">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="DateSeen" ColumnName="DateSeen" />
+          <ScalarProperty Name="MapY" ColumnName="MapY" />
+          <ScalarProperty Name="MapX" ColumnName="MapX" />
+          <ScalarProperty Name="SpeciesId" ColumnName="SpeciesId" />
+          <ScalarProperty Name="MapId" ColumnName="MapId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SimilarSpecies">
+      <EntityTypeMapping TypeName="DataStoreModel.SimilarSpecy">
+        <MappingFragment StoreEntitySet="SimilarSpecies">
+          <ScalarProperty Name="SpeciesId2" ColumnName="SpeciesId2" />
+          <ScalarProperty Name="SpeciesId1" ColumnName="SpeciesId1" />
+          <ScalarProperty Name="SimilarId" ColumnName="SimilarId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpeciesStatus">
+      <EntityTypeMapping TypeName="DataStoreModel.SpeciesStatu">
+        <MappingFragment StoreEntitySet="SpeciesStatus">
+          <ScalarProperty Name="StatusText" ColumnName="StatusText" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

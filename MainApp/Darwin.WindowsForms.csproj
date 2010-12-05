@@ -1,0 +1,362 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51D65BA5-2B91-4636-B8E0-DA79E449864C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MainApp</RootNamespace>
+    <AssemblyName>Darwin</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>Darwin</ProductName>
+    <PublisherName>F%40Soft</PublisherName>
+    <SuiteName>Darwin</SuiteName>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.2.3.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>539A726D5C7D16B2DFD32DDC4BE3E2D9201E3DC6</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>MainApp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Morpho-Diana.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Browser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Browser.Designer.cs">
+      <DependentUpon>Browser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ClassSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClassSetup.Designer.cs">
+      <DependentUpon>ClassSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Distribution.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Distribution.Designer.cs">
+      <DependentUpon>Distribution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapSingleTileView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapSingleTileView.Designer.cs">
+      <DependentUpon>MapSingleTileView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MonthPicker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MonthPicker.Designer.cs">
+      <DependentUpon>MonthPicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderSetup.Designer.cs">
+      <DependentUpon>OrderSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FamilySetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FamilySetup.Designer.cs">
+      <DependentUpon>FamilySetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GenusSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenusSetup.Designer.cs">
+      <DependentUpon>GenusSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapView.Designer.cs">
+      <DependentUpon>MapView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PhylumSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PhylumSetup.Designer.cs">
+      <DependentUpon>PhylumSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopupInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopupInfo.Designer.cs">
+      <DependentUpon>PopupInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="KingdomSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KingdomSetup.Designer.cs">
+      <DependentUpon>KingdomSetup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResults.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchResults.Designer.cs">
+      <DependentUpon>SearchResults.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpecialSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpecialSearch.Designer.cs">
+      <DependentUpon>SpecialSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpeciesColourUC.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpeciesColourUC.Designer.cs">
+      <DependentUpon>SpeciesColourUC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpeciesData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SpeciesData.Designer.cs">
+      <DependentUpon>SpeciesData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SpeciesFlags.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SpeciesFlags.Designer.cs">
+      <DependentUpon>SpeciesFlags.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stats.Designer.cs">
+      <DependentUpon>Stats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StatusSetup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatusSetup.Designer.cs">
+      <DependentUpon>StatusSetup.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Browser.resx">
+      <DependentUpon>Browser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ClassSetup.resx">
+      <DependentUpon>ClassSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Distribution.resx">
+      <DependentUpon>Distribution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapSingleTileView.resx">
+      <DependentUpon>MapSingleTileView.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MonthPicker.resx">
+      <DependentUpon>MonthPicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrderSetup.resx">
+      <DependentUpon>OrderSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FamilySetup.resx">
+      <DependentUpon>FamilySetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenusSetup.resx">
+      <DependentUpon>GenusSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapView.resx">
+      <DependentUpon>MapView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PhylumSetup.resx">
+      <DependentUpon>PhylumSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopupInfo.resx">
+      <DependentUpon>PopupInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="KingdomSetup.resx">
+      <DependentUpon>KingdomSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchResults.resx">
+      <DependentUpon>SearchResults.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpecialSearch.resx">
+      <DependentUpon>SpecialSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpeciesColourUC.resx">
+      <DependentUpon>SpeciesColourUC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpeciesData.resx">
+      <DependentUpon>SpeciesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SpeciesFlags.resx">
+      <DependentUpon>SpeciesFlags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stats.resx">
+      <DependentUpon>Stats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StatusSetup.resx">
+      <DependentUpon>StatusSetup.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="App.Config" />
+    <None Include="MainApp_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\DataSources\Darwin.WindowsForm.DataStoreEntities.datasource" />
+    <None Include="Properties\DataSources\DataStoreEntities.datasource" />
+    <None Include="Properties\DataSources\DataStoreEntities1.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Morpho-Diana.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Darwin.Export\Darwin.Export.csproj">
+      <Project>{0A841076-2EAF-49C5-AE8D-75B8830155A3}</Project>
+      <Name>Darwin.Export</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Darwin.WebReference\Darwin.WebReference.csproj">
+      <Project>{311F1B24-727B-41B9-913C-D9016562F29C}</Project>
+      <Name>Darwin.WebReference</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarwinDataAccess\Darwin.DataAccess.csproj">
+      <Project>{099CE94E-C50F-4725-B624-A16E119FBDE2}</Project>
+      <Name>Darwin.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DarwinResources\Darwin.Resources.csproj">
+      <Project>{B971E02E-398D-4802-B04C-0267D8C79771}</Project>
+      <Name>Darwin.Resources</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataAccess\Darwin.Objects.csproj">
+      <Project>{A44FE91F-9DB1-4DC7-AA97-7BE34397E9AF}</Project>
+      <Name>Darwin.Objects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       

@@ -1,0 +1,7 @@
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.WebReference\bin\Debug\Darwin.WebReference.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.WebReference\bin\Debug\Darwin.WebReference.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.WebReference\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.WebReference\obj\Debug\Darwin.WebReference.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.WebReference\obj\Debug\Darwin.WebReference.pdb
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.WebReference\bin\Debug\DataAccess.dll
+C:\Users\karl\Documents\Visual Studio 2010\Projects\Darwin\Darwin.WebReference\bin\Debug\DataAccess.pdb
